@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>D:\Program Files (x86)\Vim\vimfiles\colors\murphy_ch.vim.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="vim">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="solarized">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #839496; background-color: #002b36; }
+body { font-family: monospace; color: #839496; background-color: #002b36; }
+* { font-size: 1em; }
+.vimLineComment { color: #586e75; }
+.vimCommand { color: #b58900; }
+.Statement { color: #859900; }
+.PreProc { color: #cb4b16; }
+.Type { color: #b58900; }
+.vimGroup { color: #268bd2; font-weight: bold; text-decoration: underline; }
+.vimSynType { color: #2aa198; }
+.vimHiGroup { color: #268bd2; }
+.LineNr { color: #586e75; background-color: #073642; padding-bottom: 1px; }
+.Constant { color: #2aa198; }
+.Special { color: #dc322f; }
+.Identifier { color: #268bd2; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="vimLineComment">&quot; local syntax file - set colors on a per-machine basis:</span>
+<span id="L2" class="LineNr"> 2 </span><span class="vimLineComment">&quot; vim&#0058; tw=0 ts=4 sw=4</span>
+<span id="L3" class="LineNr"> 3 </span><span class="vimLineComment">&quot; Vim color file</span>
+<span id="L4" class="LineNr"> 4 </span><span class="vimLineComment">&quot;</span> <span class="PreProc">Maintainer:</span><span class="vimLineComment">   Ron Aaron &lt;ron@ronware.org&gt;</span>
+<span id="L5" class="LineNr"> 5 </span><span class="vimLineComment">&quot;</span> <span class="PreProc">Last Change:</span><span class="vimLineComment">  2003 May 02</span>
+<span id="L6" class="LineNr"> 6 </span>
+<span id="L7" class="LineNr"> 7 </span><span class="vimCommand">hi</span> <span class="vimCommand">clear</span>
+<span id="L8" class="LineNr"> 8 </span><span class="vimCommand">set</span> <span class="PreProc">background</span>=dark
+<span id="L9" class="LineNr"> 9 </span><span class="vimCommand">if</span> <span class="Identifier">exists</span><span class="Special">(</span><span class="Constant">&quot;syntax_on&quot;</span><span class="Special">)</span>
+<span id="L10" class="LineNr">10 </span>  <span class="vimCommand">syntax</span> <span class="vimSynType">reset</span>
+<span id="L11" class="LineNr">11 </span><span class="vimCommand">endif</span>
+<span id="L12" class="LineNr">12 </span><span class="vimCommand">let</span> <span class="Identifier">g:colors_name</span> <span class="Statement">=</span> <span class="Constant">&quot;murphy_ch&quot;</span>
+<span id="L13" class="LineNr">13 </span>
+<span id="L14" class="LineNr">14 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Normal</span>       <span class="Type">ctermbg</span>=Black  <span class="Type">ctermfg</span>=lightgreen <span class="Type">guibg</span>=<span class="Constant">#002b36</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">lightgreen</span>
+<span id="L15" class="LineNr">15 </span><span class="vimCommand">hi</span> <span class="vimGroup">Comment</span>      <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=LightRed   <span class="Type">guifg</span>=<span class="vimHiGroup">Orange</span>
+<span id="L16" class="LineNr">16 </span><span class="vimCommand">hi</span> <span class="vimGroup">Constant</span>     <span class="Type">term</span>=<span class="PreProc">underline</span> <span class="Type">ctermfg</span>=LightGreen <span class="Type">guifg</span>=<span class="vimHiGroup">White</span>   <span class="Type">gui</span>=<span class="PreProc">NONE</span>
+<span id="L17" class="LineNr">17 </span><span class="vimCommand">hi</span> <span class="vimGroup">Identifier</span>   <span class="Type">term</span>=<span class="PreProc">underline</span> <span class="Type">ctermfg</span>=LightCyan  <span class="Type">guifg</span>=<span class="Constant">#00ffff</span>
+<span id="L18" class="LineNr">18 </span><span class="vimCommand">hi</span> <span class="vimGroup">Ignore</span>                      <span class="Type">ctermfg</span>=black      <span class="Type">guifg</span>=<span class="PreProc">bg</span>
+<span id="L19" class="LineNr">19 </span><span class="vimCommand">hi</span> <span class="vimGroup">PreProc</span>      <span class="Type">term</span>=<span class="PreProc">underline</span> <span class="Type">ctermfg</span>=LightBlue  <span class="Type">guifg</span>=<span class="vimHiGroup">Wheat</span>
+<span id="L20" class="LineNr">20 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Search</span>       <span class="Type">term</span>=<span class="PreProc">reverse</span>                      <span class="Type">guifg</span>=<span class="vimHiGroup">white</span>   <span class="Type">guibg</span>=<span class="vimHiGroup">Blue</span>
+<span id="L21" class="LineNr">21 </span><span class="vimCommand">hi</span> <span class="vimGroup">Special</span>      <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=LightRed   <span class="Type">guifg</span>=<span class="vimHiGroup">magenta</span>
+<span id="L22" class="LineNr">22 </span><span class="vimCommand">hi</span> <span class="vimGroup">Statement</span>    <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=Yellow     <span class="Type">guifg</span>=<span class="Constant">#ffff00</span> <span class="Type">gui</span>=<span class="PreProc">NONE</span>
+<span id="L23" class="LineNr">23 </span><span class="vimCommand">hi</span> <span class="vimGroup">Type</span>                        <span class="Type">ctermfg</span>=LightGreen <span class="Type">guifg</span>=<span class="vimHiGroup">grey</span>    <span class="Type">gui</span>=<span class="PreProc">none</span>
+<span id="L24" class="LineNr">24 </span><span class="vimCommand">hi</span> <span class="vimGroup">Error</span>        <span class="Type">term</span>=<span class="PreProc">reverse</span>   <span class="Type">ctermbg</span>=Red    <span class="Type">ctermfg</span>=White <span class="Type">guibg</span>=<span class="vimHiGroup">Red</span>  <span class="Type">guifg</span>=<span class="vimHiGroup">White</span>
+<span id="L25" class="LineNr">25 </span><span class="vimCommand">hi</span> <span class="vimGroup">Todo</span>         <span class="Type">term</span>=<span class="PreProc">standout</span>  <span class="Type">ctermbg</span>=Yellow <span class="Type">ctermfg</span>=Black <span class="Type">guifg</span>=<span class="vimHiGroup">Blue</span> <span class="Type">guibg</span>=<span class="vimHiGroup">Yellow</span>
+<span id="L26" class="LineNr">26 </span><span class="vimLineComment">&quot; From the source:</span>
+<span id="L27" class="LineNr">27 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Cursor</span>                                         <span class="Type">guifg</span>=<span class="vimHiGroup">Orchid</span>  <span class="Type">guibg</span>=<span class="PreProc">fg</span>
+<span id="L28" class="LineNr">28 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Directory</span>    <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=LightCyan  <span class="Type">guifg</span>=<span class="vimHiGroup">Cyan</span>
+<span id="L29" class="LineNr">29 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">ErrorMsg</span>     <span class="Type">term</span>=<span class="PreProc">standout</span>  <span class="Type">ctermbg</span>=DarkRed    <span class="Type">ctermfg</span>=White <span class="Type">guibg</span>=<span class="vimHiGroup">Red</span> <span class="Type">guifg</span>=<span class="vimHiGroup">White</span>
+<span id="L30" class="LineNr">30 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">IncSearch</span>    <span class="Type">term</span>=<span class="PreProc">reverse</span>   <span class="Type">cterm</span>=<span class="PreProc">reverse</span>      <span class="Type">gui</span>=<span class="PreProc">reverse</span>
+<span id="L31" class="LineNr">31 </span><span class="vimLineComment">&quot;hi LineNr      term=underline ctermfg=Yellow                   guifg=Yellow</span>
+<span id="L32" class="LineNr">32 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">ModeMsg</span>      <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">cterm</span>=<span class="PreProc">bold</span>         <span class="Type">gui</span>=<span class="PreProc">bold</span>
+<span id="L33" class="LineNr">33 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">MoreMsg</span>      <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=LightGreen <span class="Type">gui</span>=<span class="PreProc">bold</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">SeaGreen</span>
+<span id="L34" class="LineNr">34 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">NonText</span>      <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=Blue       <span class="Type">gui</span>=<span class="PreProc">bold</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">Blue</span>
+<span id="L35" class="LineNr">35 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Question</span>     <span class="Type">term</span>=<span class="PreProc">standout</span>  <span class="Type">ctermfg</span>=LightGreen <span class="Type">gui</span>=<span class="PreProc">bold</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">Cyan</span>
+<span id="L36" class="LineNr">36 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">SpecialKey</span>   <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=LightBlue  <span class="Type">guifg</span>=<span class="vimHiGroup">Cyan</span>
+<span id="L37" class="LineNr">37 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">StatusLine</span>   <span class="Type">term</span>=<span class="PreProc">reverse</span>,<span class="PreProc">bold</span> <span class="Type">cterm</span>=<span class="PreProc">reverse</span>   <span class="Type">gui</span>=<span class="PreProc">NONE</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">White</span> <span class="Type">guibg</span>=<span class="vimHiGroup">darkblue</span>
+<span id="L38" class="LineNr">38 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">StatusLineNC</span> <span class="Type">term</span>=<span class="PreProc">reverse</span>   <span class="Type">cterm</span>=<span class="PreProc">reverse</span>      <span class="Type">gui</span>=<span class="PreProc">NONE</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">white</span> <span class="Type">guibg</span>=<span class="Constant">#333333</span>
+<span id="L39" class="LineNr">39 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Title</span>        <span class="Type">term</span>=<span class="PreProc">bold</span>      <span class="Type">ctermfg</span>=LightMagenta <span class="Type">gui</span>=<span class="PreProc">bold</span>    <span class="Type">guifg</span>=<span class="vimHiGroup">Pink</span>
+<span id="L40" class="LineNr">40 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">WarningMsg</span>   <span class="Type">term</span>=<span class="PreProc">standout</span>  <span class="Type">ctermfg</span>=LightRed   <span class="Type">guifg</span>=<span class="vimHiGroup">Red</span>
+<span id="L41" class="LineNr">41 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Visual</span>       <span class="Type">term</span>=<span class="PreProc">reverse</span>   <span class="Type">cterm</span>=<span class="PreProc">reverse</span>      <span class="Type">gui</span>=<span class="PreProc">NONE</span>      <span class="Type">guifg</span>=<span class="vimHiGroup">white</span> <span class="Type">guibg</span>=<span class="vimHiGroup">darkgreen</span>
+<span id="L42" class="LineNr">42 </span><span class="vimLineComment">&quot;set cc=80 列高亮的颜色，原始红色，太扎眼</span>
+<span id="L43" class="LineNr">43 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">ColorColumn</span>  <span class="Type">guibg</span>=<span class="Constant">#073642</span>
+<span id="L44" class="LineNr">44 </span><span class="vimLineComment">&quot;设置光标所在行的颜色</span>
+<span id="L45" class="LineNr">45 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">CursorLine</span>   <span class="Type">guibg</span>=<span class="Constant">#073642</span>
+<span id="L46" class="LineNr">46 </span><span class="vimLineComment">&quot;设置折叠行的颜色</span>
+<span id="L47" class="LineNr">47 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">Folded</span>       <span class="Type">guibg</span>=<span class="Constant">#073642</span>
+<span id="L48" class="LineNr">48 </span><span class="vimLineComment">&quot;设置行号列的颜色</span>
+<span id="L49" class="LineNr">49 </span><span class="vimCommand">hi</span> <span class="vimHiGroup">LineNr</span>       <span class="Type">term</span>=<span class="PreProc">underline</span> <span class="Type">ctermfg</span>=Yellow       <span class="Type">guifg</span>=<span class="Constant">#657b83</span>           <span class="Type">guibg</span>=<span class="Constant">#073642</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

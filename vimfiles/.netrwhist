@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='E:\body transformation\chip_ch\edition\2015_10_31\rtl_1031'
+let g:netrw_dirhist_2='C:\Windows\system32'
+let g:netrw_dirhist_3='C:/Windows/System32'
+let g:netrw_dirhist_4='C:\Windows\system32'
+let g:netrw_dirhist_5='C:/Windows/System32'
+let g:netrw_dirhist_6='C:\Users\chenhaoc\Documents\NetSarang\Xftp\Temporary'
+let g:netrw_dirhist_7='C:/Users/chenhaoc/Documents/NetSarang/Xftp/Temporary'

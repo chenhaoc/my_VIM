@@ -1,0 +1,124 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+filetype on
+set encoding=utf-8
+lang message zh_CN.UTF-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+set guifont=Consolas:h12:cANSI
+set guifontwide=幼圆:h12:cGB2312
+set lines=30 columns=100
+set nu!
+"set cindent
+set smartindent
+
+"set background=light
+set background=dark
+"colorscheme murphy
+colorscheme solarized
+call togglebg#map("<F5>")
+
+autocmd FileType verilog colorscheme murphy_ch
+autocmd FileType verilog set background=dark
+syntax enable
+
+syntax on
+set showtabline=2
+set softtabstop=4
+set shiftwidth=2
+set expandtab
+
+set foldenable "启动折叠
+set foldmethod=indent "按照缩进进行折叠
+set foldlevel=99 " 启动vim时不要自动折叠代码
+
+set diffexpr=My_Diff()
+function My_Diff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
+:inoremap ( ()<ESC>i
+:inoremap ) <c-r>=ClosePair(')')<CR>
+":inoremap { {<CR>}<ESC>O
+":inoremap } <c-r>=ClosePair('}')<CR>
+:inoremap [ []<ESC>i
+:inoremap ] <c-r>=ClosePair(']')<CR>
+":inoremap " ""<ESC>i
+":inoremap ' ''<ESC>i
+"
+:inoremap <= <= #`DLY 
+
+function! ClosePair(char)
+ if getline('.')[col('.') - 1] == a:char
+     return "\<Right>"
+ else
+     return a:char
+ endif
+endfunction
+
+"alt key not to active menu
+set winaltkeys=no "alt键不激活菜单栏
+
+
+let mapleader=","
+map tn :tabnew<cr> "打开新标签页
+map tc :tabclose<cr> "关闭新标签页
+
+"Alt键+hjkl 在插入模式下进行移动
+inoremap <M-j> <Down>
+inoremap <M-k> <Up>
+inoremap <M-h> <left>
+inoremap <M-l> <Right>
+
+nmap <leader>s :source $VIM/_vimrc<cr>
+nmap <leader>e :e $VIM/_vimrc<cr>
+
+nmap <F2> *N
+
+filetype plugin indent on  
+autocmd FileType python set omnifunc=pythoncomplete#Complete 
+autocmd FileType python set shiftwidth=4 
+
+
+"for Ctags
+set tags=tags;
+set autochdir
+
+function! CleverTab()
+  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'  "行首到光标处都是空格，tap
+    return "\<Tab>"
+  else  
+  if strpart( getline('.'), col('.')-2, 2) =~ '\s$' "当前光标前一个字母是空格，tap
+    return "\<Tab>"
+  else
+    return "\<C-N>"  "否则Tap补全，相当于有字母才补全
+  endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+
+inoremap <C-L> <C-X><C-L>   
+
